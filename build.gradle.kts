@@ -66,8 +66,22 @@ tasks.withType<Test> {
 val main: String by project
 
 application {
-    // Define the main class for the application
-    mainClass.set("it.unibo.antsim.Main")
+    mainClass.set("it.unibo.antsim.Launcher")
+}
+
+tasks.named<Jar>("jar") {
+    manifest {
+        attributes("Main-Class" to "it.unibo.antsim.Launcher")
+    }
+}
+
+tasks.named<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>("shadowJar") {
+    archiveFileName.set("PSS25-antsim.jar")
+    destinationDirectory.set(layout.projectDirectory)
+    mergeServiceFiles()
+    manifest {
+        attributes["Main-Class"] = "it.unibo.antsim.Launcher"
+    }
 }
 
 tasks.named<JavaExec>("run").configure {
