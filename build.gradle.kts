@@ -1,4 +1,4 @@
-/*
+
 plugins {
     // Apply the java plugin to add support for Java
     java
@@ -76,9 +76,9 @@ tasks.named<JavaExec>("run").configure {
         "--add-modules", "javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.swing"
     )
 }
-*/
 
 
+/*
 plugins {
     java
     application
@@ -117,3 +117,4 @@ tasks.withType<Test> {
 application {
     mainClass.set("it.unibo.antsim.Main")
 }
+*/

@@ -339,12 +339,12 @@ public class SimulationView extends BorderPane {
 
         final Spinner<Integer> foodAmountSpinner = createIntegerSpinner(MIN_FOOD_Q, MAX_FOOD_Q, DEFAULT_FOOD_Q);
         foodAmountSpinner.valueProperty().addListener(
-                (observable, oldValue, newValue) -> selectedFoodQuantity = newValue.intValue());
+                (observable, oldValue, newValue) -> selectedFoodQuantity = newValue);
 
         final Label foodAmountLabel = new Label("QUANTITA' CIBO: 1000");
         foodAmountSpinner.valueProperty().addListener(
                 (observable, oldValue, newValue) -> {
-            selectedFoodQuantity = newValue.intValue();
+            selectedFoodQuantity = newValue;
             foodAmountLabel.setText("QUANTITA' CIBO: " + selectedFoodQuantity);
         });
 

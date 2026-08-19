@@ -33,7 +33,7 @@ public final class Main extends Application {
     private static final double MAX_PHEROMONE_LEVEL = 100.0;
     private static final double EVAPORATION_RATE = 1.0;
     private static final double ACO_ALPHA = 1.0;
-    private static final double ACO_BETA = 0.5;
+    private static final double ACO_BETA = 2.0;
     private static final double SENSOR_RANGE = 32.0;
     private static final double SENSOR_ANGLE = Math.PI / 4.0;
     private static final double RANDOM_FACTOR = Math.PI / 3.0;
@@ -113,7 +113,7 @@ public final class Main extends Application {
      *
      * @param args final main arguments
      */
-    static void main(final String[] args) {
+    public static void main(final String[] args) {
         launch(args);
     }
 }
